@@ -8,12 +8,12 @@ var public_path = path.join(__dirname,"/public/images");
 wkhtmltopdf.command = path.join(__dirname,'/wkhtmltopdf');
 app.use(express.static(__dirname + '/public/'));
 app.get("/",function(req,res) {
-	fs.readFile(__dirname + '/view/index-inner1.html', 'utf8', function(err, html) {
+	fs.readFile(__dirname + '/views/index-inner1.html', 'utf8', function(err, html) {
 		// console.log(html);
 		// console.log(typeof(html));
-		console.log(public_path);
+		// console.log(public_path);
 		var result = html.replace(/images/g, public_path);
-		console.log(result);
+		// console.log(result);
 		wkhtmltopdf(result).pipe(res);
 	});
 });

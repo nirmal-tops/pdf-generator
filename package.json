@@ -1,7 +1,7 @@
 {
-  "name": "print-app",
+  "name": "pdf-generator",
   "version": "1.0.0",
-  "description": "Application to test Print with wkhtmltopdf",
+  "description": "=============",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,7 +10,10 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.14.0",
-    "request": "^2.74.0",
     "wkhtmltopdf": "^0.3.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.1.0"
   }
 }
