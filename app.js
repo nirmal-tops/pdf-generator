@@ -5,7 +5,23 @@ wkhtmltopdf = require("wkhtmltopdf")
 path        = require("path");
 
 var public_path = path.join(__dirname,"/public/images");
-wkhtmltopdf.command = path.join(__dirname,'/wkhtmltopdf');
+switch(process.platform) {
+	case 'linux' :
+		wkhtmltopdf.command = path.join(__dirname,'/wkhtmltopdf');
+		break;
+	case 'darwin' :
+		wkhtmltopdf.command = path.join(__dirname,'/wkhtmltopdf');
+		break;
+	case 'win32' :
+		wkhtmltopdf.command = path.join(__dirname,'/wkhtmltopdf');
+		break;
+	case 'sunos' :
+		wkhtmltopdf.command = path.join(__dirname,'/wkhtmltopdf');
+		break;
+	case 'freebsd' :
+		wkhtmltopdf.command = path.join(__dirname,'/wkhtmltopdf');
+		break;
+}
 app.use(express.static(__dirname + '/public/'));
 app.get("/",function(req,res) {
 	fs.readFile(__dirname + '/views/index-inner1.html', 'utf8', function(err, html) {
